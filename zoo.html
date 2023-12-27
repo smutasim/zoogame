@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Game Page</title>
+    
+</head>
+<body>
+<div id="columns" class="grid-columns">
+    <div id="header" class="grid-col-span-all">
+        <h1>Zoo Game!</h1>
+        <!-- Display coins, hearts, etc here -->
+    </div>
+
+    <div id="buildings-column">
+            <h2>Buildings</h2>
+		<p id="buildingCapacity">Capacity: 0/0</p>
+            <div class="animal">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/buildings/land.png" class="image">
+        	    	<div class="name">
+                	    <h3>Land Expansion</h3>
+			    <p id="landlvl">Level 1</p>
+            		</div>
+        		<button id="buy" onclick="expandland()">
+				<img src="images/coin.png" class="coin-img">
+				<p id="landp">1,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="lemonade">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/buildings/lemonade.png" class="image">
+        	    	<div class="name">
+                	    <h3>Lemonade Stand</h3>
+				<p id="lemonadeq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyBuilding('lemonade')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="lemonadep">1,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="icecream">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/buildings/icecream.png" class="image">
+        	    	<div class="name">
+                	    <h3>Ice Cream Stand</h3>
+				<p id="icecreamq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyBuilding('icecream')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="icecreamp">12,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="gift">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/buildings/giftshop.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Gift Shop</h3>
+				<p id="giftq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyBuilding('gift')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="giftp">70,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="diner">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/buildings/diner.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Diner</h3>
+				<p id="dinerq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyBuilding('diner')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="dinerp">150,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="bowling">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/buildings/bowling.png" class="image">
+        	    	<div class="name">
+                	    <h3>Game Room</h3>
+				<p id="bowlingq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyBuilding('bowling')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="bowlingp">400,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="cinema">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/buildings/cinema.png" class="image">
+        	    	<div class="name">
+                	    <h3>Cinema</h3>
+				<p id="cinemaq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyBuilding('cinema')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="cinemap">1,200,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="amusement">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/buildings/rollercoaster.png" class="image">
+        	    	<div class="name">
+                	    <h3>Amusement Park</h3>
+				<p id="amusementq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyBuilding('amusement')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="amusementp">3,000,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+    </div>
+
+    <div id="animals-column" class="grid-animals">
+            <div id="animalheader" class="grid-col-span-2">
+		<h2>Animals</h2>
+		<p id="animalCapacity">Capacity: 0/0</p>
+	    </div>
+            <div class="animal" id="duck">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/duck.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Duck</h3>
+				<p id="duckq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('duck')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="duckp">200c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="otter">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/otter.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Otter</h3>
+				<p id="otterq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('otter')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="otterp">600c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="parrot">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/parrot.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Parrot</h3>
+				<p id="parrotq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('parrot')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="parrotp">1,400c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="snake">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/snake.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Snake</h3>
+				<p id="snakeq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('snake')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="snakep">3,500c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="dolphin">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/dolphin.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Dolphin</h3>
+				<p id="dolphinq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('dolphin')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="dolphinp">6,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="buffalo">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/buffalo.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Buffalo</h3>
+				<p id="buffaloq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('buffalo')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="buffalop">10,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="toucan">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/toucan.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Toucan</h3>
+				<p id="toucanq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('toucan')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="toucanp">14,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="alligator">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/alligator.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Alligator</h3>
+				<p id="alligatorq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('alligator')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="alligatorp">20,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="lion">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/lion.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Lion</h3>
+				<p id="lionq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('lion')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="lionp">45,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="squid">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/squid.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Squid</h3>
+				<p id="squidq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('squid')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="squidp">60,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="moose">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/moose.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Moose</h3>
+				<p id="mooseq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('moose')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="moosep">80,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="turtle">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/turtle.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Sea Turtle</h3>
+				<p id="turtleq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('turtle')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="turtlep">130,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="giraffe">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/giraffe.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Giraffe</h3>
+				<p id="giraffeq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('giraffe')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="giraffep">150,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="rhino">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/rhino.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Rhino</h3>
+				<p id="rhinoq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('rhino')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="rhinop">250,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="whale">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/whale.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Whale</h3>
+				<p id="whaleq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('whale')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="whalep">550,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal" id="tiger">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/tiger.jpg" class="image">
+        	    	<div class="name">
+                	    <h3>Tiger</h3>
+				<p id="tigerq">Qty: 0</p>
+            		</div>
+        		<button id="buy" onclick="buyAnimal('Tiger')">
+				<img src="images/coin.png" class="coin-img">
+				<p id="tigerp">900,000c</p>
+			</button>
+    		</div>
+	    </div>
+
+            <div class="animal">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/platypus.jpg" class="image" style="height: 100px; padding-top: 0px; padding-bottom: 0px; margin-right:30px;">
+        	    	<div class="name">
+                	    <h3>Platypus</h3>
+				<p>Qty: 0</p>
+            		</div>
+    		</div>
+	    </div>
+
+            <div class="animal">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/narwhal.jpg" class="image" style="margin-right:50px;">
+        	    	<div class="name">
+                	    <h3>Narwhal</h3>
+				<p>Qty: 0</p>
+            		</div>
+    		</div>
+	    </div>
+
+            <div class="animal">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/minotaur.jpg" class="image" style="margin-right:50px;">
+        	    	<div class="name">
+                	    <h3>Minotaur</h3>
+				<p>Qty: 0</p>
+            		</div>
+    		</div>
+	    </div>
+
+            <div class="animal">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/turtleduck.jpg" class="image" style="margin-right:30px;">
+        	    	<div class="name">
+                	    <h3>Turtle Duck</h3>
+				<p>Qty: 0</p>
+            		</div>
+    		</div>
+	    </div>
+
+            <div class="animal">
+		<div id="columns" class="grid-columns">
+	        	<img src="images/unicorn.jpg" class="image" style="height: 100px; padding-top: 0px; padding-bottom: 0px; margin-right:30px;">
+        	    	<div class="name">
+                	    <h3>Unicorn</h3>
+				<p>Qty: 0</p>
+            		</div>
+    		</div>
+	    </div>
+
+        </div>
+
+    <div id="achievements-column">
+            <h2>Achievements</h2>
+		<h2 id="totalcoins"></h2>
+    </div>
+</div>
+
+<script src="scripts.js"></script>
+
+</body>
+</html>

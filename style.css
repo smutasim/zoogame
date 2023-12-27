@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#header {
+    background-color: #ff8c00;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.grid-columns {
+	display: grid;
+	gap:  0.5em;
+	grid-template-columns: repeat(3, 1fr);
+        background-color: #ff8c00;
+	background-color: hsl(35, 100%, 80%);
+}
+
+.grid-col-span-all{	grid-column: span 3; }
+
+#buildings-column,
+#animals-column,
+#achievements-column {
+    height: 80vh;
+    overflow-y: auto; /* adds scrollbar */
+    padding: 1px;
+    border-right: 1px solid #ccc;
+}
+
+.grid-animals {
+	display: grid;
+	gap: 0.5em;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 100px;
+}
+
+.grid-col-span-2{	grid-column: span 2; }
+
+.animal {
+	border: 3px solid #ccc;
+	padding: 2px;
+	margin: 2px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+    height: 80px;
+    width: auto; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.coin-img{
+	height: 40px;
+	width: 40px;
+}
+.name {
+}
+
+button {
+	padding: 5px 10px;
+        color: #000;
+	height: 40px;
+	width: 40px;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+
